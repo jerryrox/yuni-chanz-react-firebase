@@ -1,0 +1,62 @@
+{
+  "name": "yuni-chanz-react-firebase",
+  "version": "0.0.1",
+  "private": false,
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.7",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "bindable-bloc": "^1.2.1",
+    "eslint": "^7.26.0",
+    "eslint-plugin-react": "^7.23.2",
+    "firebase": "^8.6.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1",
+    "yuni-chanz-react": "^0.0.4"
+  },
+  "peerDependencies": {
+    "@types/react": "17.x",
+    "@types/react-dom": "17.x",
+    "bindable-bloc": "1.2.x",
+    "firebase": "8.x",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "yuni-chanz-react": ">= 0.0.4 < 0.1"
+  },
+  "scripts": {
+    "deploy": "yarn lint && yarn build && npm publish ./build",
+    "build": "yarn clean && tsc -p ./tsconfig.build.json && cp {package.json,README.md} ./build",
+    "clean": "rm -rf ./build && rm -f ./tsconfig.build.tsbuildinfo",
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "test": "react-scripts test"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
