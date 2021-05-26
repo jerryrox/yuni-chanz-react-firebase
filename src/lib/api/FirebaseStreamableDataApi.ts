@@ -1,9 +1,9 @@
 import FirebaseApi from "./FirebaseApi";
 import { Bindable } from "bindable-bloc";
 import { FBDocumentSnapshot, FBDocumentReference } from "./FirebaseTypes";
-import { IStreamableDataApi } from "yuni-chanz-react";
+import { IStreamableDataApi, ApiResponse } from "yuni-chanz-react";
 
-export default abstract class FirebaseStreamableDataApi<T> extends FirebaseApi<T | null> implements IStreamableDataApi<T> {
+export default abstract class FirebaseStreamableDataApi<T> extends FirebaseApi<T> implements IStreamableDataApi<T> {
     
     readonly streamedData = new Bindable<T | null>(null);
 
@@ -21,6 +21,24 @@ export default abstract class FirebaseStreamableDataApi<T> extends FirebaseApi<T
             this.streamCanceller();
             this.streamCanceller = null;
         }
+    }
+
+    async request(): Promise<ApiResponse<T>> {
+        try {
+            const ref = this.getReference();
+            const response = await ref.get();
+            return ApiResponse.success(this.parseData(response));
+        }
+        catch(e) {
+            return ApiResponse.failed(e, this.getRequestErrorMessage());
+        }
+    }
+
+    /**
+     * Returns the error message for the default request implementation.
+     */
+    protected getRequestErrorMessage() {
+        return "Error while requesting data.";
     }
 
     /**
