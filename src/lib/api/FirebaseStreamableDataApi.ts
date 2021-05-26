@@ -9,16 +9,6 @@ export default abstract class FirebaseStreamableDataApi<T> extends FirebaseApi<T
 
     private streamCanceller: (() => void) | null = null;
 
-    
-    async request(): Promise<T | null> {
-        const ref = this.getReference();
-        const response = await ref.get();
-        
-        if(response.exists) {
-            return this.parseData(response as FBDocumentSnapshot);
-        }
-        return null;
-    }
 
     startStream() {
         this.stopStream();
