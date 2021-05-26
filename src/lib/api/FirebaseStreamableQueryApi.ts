@@ -10,14 +10,6 @@ export default abstract class FirebaseStreamableQueryApi<T = any> extends Fireba
     private streamCanceller: (() => void) | null = null;
 
     
-    async request(): Promise<T[]> {
-        const query = this.getQuery();
-        const response = await query.get();
-        return response.docs.map((doc) => {
-            return this.parseData(doc as FBQueryDocumentSnapshot);
-        });
-    }
-
     startStream() {
         this.stopStream();
 

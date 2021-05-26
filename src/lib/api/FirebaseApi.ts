@@ -1,5 +1,5 @@
 import firebase from "firebase";
-import { IApi } from "yuni-chanz-react";
+import { ApiResponse, IApi } from "yuni-chanz-react";
 
 export default abstract class FirebaseApi<T = any> implements IApi<T> {
     
@@ -16,5 +16,5 @@ export default abstract class FirebaseApi<T = any> implements IApi<T> {
     readonly analytics = firebase.analytics();
 
 
-    abstract request(): Promise<T>;
+    abstract request(): Promise<ApiResponse<T>>;
 }
