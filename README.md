@@ -2,7 +2,9 @@
 Firebase integration plugin for yuni-chanz-react.
 
 ## Versions
-### 0.3.0 (WIP)
+### 0.3.1 (WIP)
+
+### 0.3.0
 #### Changes
 - Removed the importing of firebase modules in `FirebaseApi`.
 
