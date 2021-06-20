@@ -1,5 +1,5 @@
 import FirebaseApi from "./FirebaseApi";
-import { Bindable } from "bindable-bloc";
+import { Bindable } from "bindable-data";
 import { FBDocumentSnapshot, FBDocumentReference } from "./FirebaseTypes";
 import { IStreamableDataApi, ApiResponse } from "yuni-chanz-react";
 
@@ -29,7 +29,7 @@ export default abstract class FirebaseStreamableDataApi<T> extends FirebaseApi<T
             const response = await ref.get();
             return ApiResponse.success(this.parseData(response));
         }
-        catch(e) {
+        catch(e: any) {
             return ApiResponse.failed(e, this.getRequestErrorMessage());
         }
     }

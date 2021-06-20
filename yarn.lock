@@ -3194,12 +3194,10 @@ binary-extensions@^2.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
-bindable-bloc@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/bindable-bloc/-/bindable-bloc-1.2.1.tgz#739682897a816afdabc274ceeadd667c69e658f3"
-  integrity sha512-URqo6X01Yha8G0SglPK6G4b3FqumnU8XzyQ4ignV6en+cuMmsw2PW3xe811Ty138Zp5vj3CnNyopSslQiypxdg==
-  dependencies:
-    localforage "^1.7.4"
+bindable-data@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/bindable-data/-/bindable-data-0.0.1.tgz#ff09698b556d7e58b7086b213087bea768f5a72d"
+  integrity sha512-wgsKuTOia/IaIOAhhaFw2QEIF25+YLsXYGQZpvbc+xeaAPA3r36Jp62Jc6IB6/SqefyIX7TJGCZMG2FYgjhLaQ==
 
 bindings@^1.5.0:
   version "1.5.0"
@@ -6230,11 +6228,6 @@ ignore@^5.1.4:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.8.tgz#f150a8b50a34289b33e22f5889abd4d8016f0e57"
   integrity sha512-BMpfD7PpiETpBl/A6S498BaIJ6Y/ABT93ETbby2fP00v4EbvPBXWEoaR1UBPKs3iR53pJY7EtZk5KACI57i1Uw==
 
-immediate@~3.0.5:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
-  integrity sha1-nbHb0Pr43m++D13V5Wu2BigN5ps=
-
 immer@8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/immer/-/immer-8.0.1.tgz#9c73db683e2b3975c424fb0572af5889877ae656"
@@ -7428,13 +7421,6 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lie@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/lie/-/lie-3.1.1.tgz#9a436b2cc7746ca59de7a41fa469b3efb76bd87e"
-  integrity sha1-mkNrLMd0bKWd56QfpGmz77dr2H4=
-  dependencies:
-    immediate "~3.0.5"
-
 lines-and-columns@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
@@ -7481,13 +7467,6 @@ loader-utils@^1.1.0, loader-utils@^1.2.3, loader-utils@^1.4.0:
     big.js "^5.2.2"
     emojis-list "^3.0.0"
     json5 "^1.0.1"
-
-localforage@^1.7.4:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/localforage/-/localforage-1.9.0.tgz#f3e4d32a8300b362b4634cc4e066d9d00d2f09d1"
-  integrity sha512-rR1oyNrKulpe+VM9cYmcFn6tsHuokyVHFaCM3+osEmxaHTbEk8oQu6eGDfS6DQLWi/N67XRmB8ECG37OES368g==
-  dependencies:
-    lie "3.1.1"
 
 locate-path@^2.0.0:
   version "2.0.0"
@@ -12216,7 +12195,7 @@ yocto-queue@^0.1.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-yuni-chanz-react@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/yuni-chanz-react/-/yuni-chanz-react-0.2.0.tgz#2e2ab9091ab8630d4ddc6ed26ec0622c9797704a"
-  integrity sha512-2/TLIKzQjGrQTMQLe839idi5Sms6EFP1KnJiLo3mIVGzKyHQuK8s/3esuash1uXKDmSczqhcC22nnNLzZJVwFw==
+yuni-chanz-react@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/yuni-chanz-react/-/yuni-chanz-react-1.0.0.tgz#89692076515c31795b5486ec77cde37784ec6764"
+  integrity sha512-xLKlpY2lNEPIqG6/iQfuDcsmu70Dvd33FZZ1YU5O4CflKvL7oY12e7UDT0ozFg6cf3t/Xwi/0ZRw7L+Cf21vmA==
