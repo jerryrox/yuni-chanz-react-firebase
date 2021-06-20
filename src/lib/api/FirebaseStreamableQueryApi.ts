@@ -1,4 +1,4 @@
-import { Bindable } from "bindable-bloc";
+import { Bindable } from "bindable-data";
 import { IStreamableQueryApi, ApiResponse } from "yuni-chanz-react";
 import FirebaseApi from "./FirebaseApi";
 import { FBQueryDocumentSnapshot, FBQuery, FBQuerySnapshot } from "./FirebaseTypes";
@@ -30,7 +30,7 @@ export default abstract class FirebaseStreamableQueryApi<T = any> extends Fireba
             const data = response.docs.map((doc) => this.parseData(doc));
             return ApiResponse.success(data);
         }
-        catch(e) {
+        catch(e: any) {
             return ApiResponse.failed(e, this.getRequestErrorMessage());
         }
     }
