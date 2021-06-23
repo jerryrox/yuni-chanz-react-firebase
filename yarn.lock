@@ -12195,7 +12195,7 @@ yocto-queue@^0.1.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-yuni-chanz-react@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/yuni-chanz-react/-/yuni-chanz-react-1.0.0.tgz#89692076515c31795b5486ec77cde37784ec6764"
-  integrity sha512-xLKlpY2lNEPIqG6/iQfuDcsmu70Dvd33FZZ1YU5O4CflKvL7oY12e7UDT0ozFg6cf3t/Xwi/0ZRw7L+Cf21vmA==
+yuni-chanz-react@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/yuni-chanz-react/-/yuni-chanz-react-1.1.0.tgz#0691fc2dc57716f69017d9066ebe6893bbb7b17e"
+  integrity sha512-JZ+Px/8oehGfuYx5oCgI0A6PiMLtbppCYANL7H0Lqvn7zfsOyPN18kQRHmwFPQoE5UOLQCw91C9V9fAGxWQ1Bw==
