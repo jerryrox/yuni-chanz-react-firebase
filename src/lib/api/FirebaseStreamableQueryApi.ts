@@ -13,7 +13,7 @@ export default abstract class FirebaseStreamableQueryApi<T = any> extends Fireba
     startStream() {
         this.stopStream();
 
-        this.getQuery().onSnapshot((snapshot) => this.onSnapshot(snapshot));
+        this.streamCanceller = this.getQuery().onSnapshot((snapshot) => this.onSnapshot(snapshot));
     }
 
     stopStream() {
