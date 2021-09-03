@@ -2,6 +2,10 @@
 Firebase integration plugin for yuni-chanz-react.
 
 ## Versions
+### 0.5.0
+#### Changes
+- Upgraded firebase dependency.
+
 ### 0.4.2
 #### Fixes
 - Fixed bug where streamable data and query apis weren't being cancelled on `stopStream` call.
