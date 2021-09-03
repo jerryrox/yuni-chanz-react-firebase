@@ -16,30 +16,30 @@
     "bindable-data": "^0.0.1",
     "eslint": "^7.26.0",
     "eslint-plugin-react": "^7.23.2",
-    "firebase": "^8.6.2",
+    "firebase": "^9.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1",
-    "yuni-chanz-react": "^1.1.0"
+    "yuni-chanz-react": "^1.1.2"
   },
   "peerDependencies": {
     "@types/react": "17.x",
     "@types/react-dom": "17.x",
     "bindable-data": "0.0.x",
-    "firebase": "8.x",
+    "firebase": "9.x",
     "react": "17.x",
     "react-dom": "17.x",
-    "yuni-chanz-react": ">= 1.1.0 < 1.2"
+    "yuni-chanz-react": ">= 1.1.2 < 1.2"
   },
   "scripts": {
     "deploy": "yarn lint && yarn build && npm publish ./build",
     "build": "yarn clean && tsc -p ./tsconfig.build.json && cp {package.json,README.md} ./build",
     "clean": "rm -rf ./build && rm -f ./tsconfig.build.tsbuildinfo",
     "lint": "eslint src/**/*.{ts,tsx} --no-error-on-unmatched-pattern",
-    "test": "react-scripts test"
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/yuni-chanz-react\""
   },
   "eslintConfig": {
     "extends": [

@@ -1,7 +1,7 @@
 import FirebaseApi from "./FirebaseApi";
 import { Bindable } from "bindable-data";
-import { FBDocumentSnapshot, FBDocumentReference } from "./FirebaseTypes";
 import { IStreamableDataApi, ApiResponse } from "yuni-chanz-react";
+import { DocumentReference, DocumentSnapshot, getDoc, onSnapshot } from "firebase/firestore";
 
 export default abstract class FirebaseStreamableDataApi<T> extends FirebaseApi<T> implements IStreamableDataApi<T> {
     
@@ -13,7 +13,8 @@ export default abstract class FirebaseStreamableDataApi<T> extends FirebaseApi<T
     startStream() {
         this.stopStream();
 
-        this.streamCanceller = this.getReference().onSnapshot((snapshot) => this.onSnapshot(snapshot));
+        
+        this.streamCanceller = onSnapshot(this.getReference(), (snapshot) => this.onSnapshot(snapshot));
     }
 
     stopStream() {
@@ -26,7 +27,7 @@ export default abstract class FirebaseStreamableDataApi<T> extends FirebaseApi<T
     async request(): Promise<ApiResponse<T>> {
         try {
             const ref = this.getReference();
-            const response = await ref.get();
+            const response = await getDoc(ref);
             return ApiResponse.success(this.parseData(response));
         }
         catch(e: any) {
@@ -44,17 +45,17 @@ export default abstract class FirebaseStreamableDataApi<T> extends FirebaseApi<T
     /**
      * Returns the query used for streaming.
      */
-    protected abstract getReference(): FBDocumentReference;
+    protected abstract getReference(): DocumentReference;
 
     /**
      * Parses the specified document snapshot into model T.
      */
-    protected abstract parseData(snapshot: FBDocumentSnapshot): T;
+    protected abstract parseData(snapshot: DocumentSnapshot): T;
 
     /**
      * Event called when the new stream of data has been received.
      */
-    private onSnapshot(snapshot: FBDocumentSnapshot) {
-        this.streamedData.value = snapshot.exists ? this.parseData(snapshot) : null;
+    private onSnapshot(snapshot: DocumentSnapshot) {
+        this.streamedData.value = snapshot.exists() ? this.parseData(snapshot) : null;
     }
 }

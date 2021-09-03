@@ -1,5 +1,5 @@
-import firebase from "firebase";
 import FirebaseModelConverter from "../lib/data/FirebaseModelConverter";
+import { Timestamp } from "firebase/firestore";
 
 class TestConverter extends FirebaseModelConverter {
 
@@ -22,6 +22,6 @@ test("Firebase data encode functions", () => {
 test("Firebase data decode functions", () => {
     const converter = new TestConverter();
 
-    const timestamp = firebase.firestore.Timestamp.fromDate(new Date(2020, 1, 0));
+    const timestamp = Timestamp.fromDate(new Date(2020, 1, 0));
     expect(converter.decodeDate(timestamp)?.getTime()).toBe(new Date(2020, 1, 0).getTime());
 });

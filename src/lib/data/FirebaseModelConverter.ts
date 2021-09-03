@@ -1,5 +1,4 @@
-import { FBTimestamp } from "../api/FirebaseTypes";
-import firebase from "firebase";
+import { Timestamp } from "firebase/firestore";
 import { ModelConverter } from "yuni-chanz-react";
 
 export default abstract class FirebaseModelConverter<T = any> extends ModelConverter<T> {
@@ -7,12 +6,12 @@ export default abstract class FirebaseModelConverter<T = any> extends ModelConve
     /**
      * Encodes the specified Date instance into a Firestore date representation.
      */
-    encodeDate(value: Date): FBTimestamp {
-        return firebase.firestore.Timestamp.fromDate(value);
+    encodeDate(value: Date): Timestamp {
+        return Timestamp.fromDate(value);
     }
 
     decodeDate(value: any): Date | null {
-        if(value instanceof firebase.firestore.Timestamp) {
+        if(value instanceof Timestamp) {
             return value.toDate();
         }
         return super.decodeDate(value);

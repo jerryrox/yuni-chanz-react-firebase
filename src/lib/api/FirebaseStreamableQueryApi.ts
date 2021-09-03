@@ -1,7 +1,7 @@
 import { Bindable } from "bindable-data";
+import { Query, QueryDocumentSnapshot, QuerySnapshot, onSnapshot, getDocs } from "firebase/firestore";
 import { IStreamableQueryApi, ApiResponse } from "yuni-chanz-react";
 import FirebaseApi from "./FirebaseApi";
-import { FBQueryDocumentSnapshot, FBQuery, FBQuerySnapshot } from "./FirebaseTypes";
 
 export default abstract class FirebaseStreamableQueryApi<T = any> extends FirebaseApi<T[]> implements IStreamableQueryApi<T> {
     
@@ -13,7 +13,7 @@ export default abstract class FirebaseStreamableQueryApi<T = any> extends Fireba
     startStream() {
         this.stopStream();
 
-        this.streamCanceller = this.getQuery().onSnapshot((snapshot) => this.onSnapshot(snapshot));
+        this.streamCanceller = onSnapshot(this.getQuery(), (snapshot) => this.onSnapshot(snapshot));
     }
 
     stopStream() {
@@ -26,7 +26,7 @@ export default abstract class FirebaseStreamableQueryApi<T = any> extends Fireba
     async request(): Promise<ApiResponse<T[]>> {
         try {
             const query = this.getQuery();
-            const response = await query.get();
+            const response = await getDocs(query);
             const data = response.docs.map((doc) => this.parseData(doc));
             return ApiResponse.success(data);
         }
@@ -45,17 +45,17 @@ export default abstract class FirebaseStreamableQueryApi<T = any> extends Fireba
     /**
      * Returns the query used for streaming.
      */
-    protected abstract getQuery(): FBQuery;
+    protected abstract getQuery(): Query;
 
     /**
      * Parses the specified document snapshot into model T.
      */
-    protected abstract parseData(snapshot: FBQueryDocumentSnapshot): T;
+    protected abstract parseData(snapshot: QueryDocumentSnapshot): T;
 
     /**
      * Event called when the new stream of data has been received.
      */
-    private onSnapshot(querySnapshot: FBQuerySnapshot) {
+    private onSnapshot(querySnapshot: QuerySnapshot) {
         this.streamedData.value = querySnapshot.docs.map((doc) => {
             return this.parseData(doc);
         });
