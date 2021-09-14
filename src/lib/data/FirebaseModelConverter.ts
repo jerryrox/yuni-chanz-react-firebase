@@ -6,7 +6,7 @@ export default abstract class FirebaseModelConverter<T = any> extends ModelConve
     /**
      * Encodes the specified Date instance into a Firestore date representation.
      */
-    encodeDate(value: Date): Timestamp {
+    encodeDate(value: Date): any {
         return Timestamp.fromDate(value);
     }
 
