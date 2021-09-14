@@ -2,7 +2,7 @@
 Firebase integration plugin for yuni-chanz-react.
 
 ## Versions
-### 0.5.1 (WIP)
+### 0.5.1
 #### Changes
 - Increased `yuni-chanz-react` version.
 - Changed return value of `FirebaseModelConverter.encodeDate` to `any`.
