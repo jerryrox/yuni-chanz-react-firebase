@@ -2,6 +2,10 @@
 Firebase integration plugin for yuni-chanz-react.
 
 ## Versions
+### 0.5.2 (WIP)
+#### New features
+- Implemented `adjustForFunctions` for `FirebaseModelConverter` to support model conversion which is compatible for use with firebase function arguments.
+
 ### 0.5.1
 #### Changes
 - Increased `yuni-chanz-react` version.
