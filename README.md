@@ -2,7 +2,7 @@
 Firebase integration plugin for yuni-chanz-react.
 
 ## Versions
-### 0.5.3 (WIP)
+### 0.5.3
 #### Changes
 - Updated `bindable-data` dependency version.
 
