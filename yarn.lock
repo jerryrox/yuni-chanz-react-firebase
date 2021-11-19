@@ -2324,6 +2324,11 @@
   dependencies:
     source-map "^0.6.1"
 
+"@types/uuid@^8.3.1":
+  version "8.3.3"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.3.tgz#c6a60686d953dbd1b1d45e66f4ecdbd5d471b4d0"
+  integrity sha512-0LbEEx1zxrYB3pgpd1M5lEhLcXjKJnYghvhTRgaBeUivLHMDM1TzF3IJ6hXU2+8uA4Xz+5BA63mtZo5DjVT8iA==
+
 "@types/webpack-sources@*":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@types/webpack-sources/-/webpack-sources-2.1.0.tgz#8882b0bd62d1e0ce62f183d0d01b72e6e82e8c10"
@@ -3309,10 +3314,13 @@ binary-extensions@^2.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
-bindable-data@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/bindable-data/-/bindable-data-0.0.1.tgz#ff09698b556d7e58b7086b213087bea768f5a72d"
-  integrity sha512-wgsKuTOia/IaIOAhhaFw2QEIF25+YLsXYGQZpvbc+xeaAPA3r36Jp62Jc6IB6/SqefyIX7TJGCZMG2FYgjhLaQ==
+bindable-data@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/bindable-data/-/bindable-data-0.1.2.tgz#68c7b85f317470df456a4727bec14c1e6aaf8768"
+  integrity sha512-qAoTxnD0nZvYCw7hsqAdbXCPowzeoWviBPXs8mEYBafLTuyMq0ivh6NfWsjd7v4vBgZN8FCe+uSJHPCI/gsZ3g==
+  dependencies:
+    "@types/uuid" "^8.3.1"
+    uuid "^8.3.2"
 
 bindings@^1.5.0:
   version "1.5.0"
@@ -11782,7 +11790,7 @@ uuid@^3.3.2, uuid@^3.4.0:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
-uuid@^8.3.0:
+uuid@^8.3.0, uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
