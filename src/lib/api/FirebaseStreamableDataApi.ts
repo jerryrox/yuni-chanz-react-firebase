@@ -13,7 +13,6 @@ export default abstract class FirebaseStreamableDataApi<T> extends FirebaseApi<T
     startStream() {
         this.stopStream();
 
-        
         this.streamCanceller = onSnapshot(this.getReference(), (snapshot) => this.onSnapshot(snapshot));
     }
 
